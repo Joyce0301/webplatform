@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cart</title>
+  <link rel="stylesheet" href="../css/public.css">
+  <link rel="stylesheet" href="../css/cart.css">
+</head>
+
+<body>
+
+  <div class="page-wrapper">
+    <header>
+      <div class="container">
+        <div class="header-content">
+          <!-- Left Navigation -->
+          <nav class="nav-left">
+            <a href="../../index.html" class="nav-item">AR Home</a>
+            <a href="space-builder.html" class="nav-item">
+              Space Builder
+              <img src="../images/icons/arrow-down.png" alt="dropdown">
+            </a>
+            <a href="products.html" class="nav-item ">
+              Products
+              <img src="../images/icons/arrow-down.png" alt="dropdown">
+            </a>
+            <a href="download.html" class="nav-item ">
+              Download
+
+            </a>
+          </nav>
+
+          <!-- Search Bar -->
+          <div class="search-container">
+            <img src="../images/icons/search.png" alt="search" class="search-icon">
+            <input type="text" class="search-input" placeholder="Search">
+          </div>
+
+          <!-- Right Navigation -->
+          <div class="nav-right">
+            <a href="#">
+              <img src="../images/icons/l-love.png" alt="wishlist">
+            </a>
+            <a href="#">
+              <img src="../images/icons/cart.png" alt="cart">
+            </a>
+            <a href="#">
+              <img src="../images/icons/avatar.jpg" alt="profile" class="avatar">
+            </a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main style="flex: 1;">
+      <section class="section-1">
+        <img src="../images/img/1.png" alt="Cart Banner" class="banner-bg">
+        <h1 class="banner-title">Cart</h1>
+      </section>
+
+      <div class="cart-item">
+        <div class="cart-item-image">
+          <img src="../images/img/3.png" alt="Mini Blue Chair">
+        </div>
+        <div class="cart-item-info">
+          <h2 class="cart-item-title">Mini Blue Chair</h2>
+          <p class="cart-item-desc">Find a bright ideal to suit your taste with our great selection of suspension, wall,
+            floor and table lights. breathable Walking</p>
+          <div class="cart-item-size">
+            Size:<br>
+            Length-34cm, <span>Width-56cm</span>
+          </div>
+          <div class="cart-item-price">N6,250</div>
+        </div>
+        <div class="cart-item-delete">
+          <img src="../images/icons/trash-bin.png" alt="Delete">
+        </div>
+      </div>
+
+      <div class="payment-section">
+        <h2 class="payment-title">Payment for booking</h2>
+        <div class="card-info">
+          <div class="card-type">
+            <img src="../images/icons/cc-visa.png" alt="Visa">
+            <span class="card-type-text">Credit or debit Visa card</span>
+          </div>
+          <div class="card-number">4218 5600 0008 1456</div>
+          <div class="card-details">
+            <div class="input-group">
+              <input type="text" placeholder="Expiration">
+            </div>
+            <div class="input-group">
+              <input type="text" placeholder="CVV">
+            </div>
+          </div>
+          <div class="card-details">
+            <div class="input-group">
+              <input type="text" placeholder="Zip Code">
+            </div>
+            <div class="input-group">
+              <input type="text" placeholder="Select Country">
+            </div>
+          </div>
+        </div>
+
+        <div class="cart-total">
+          <div class="total-info">
+            <div class="price-row">
+              <div class="total-label">Total:</div>
+              <div class="total-price">N75,000</div>
+            </div>
+            <div class="total-note">DELIVERY EXCLUSIVE</div>
+          </div>
+          <button class="checkout-button">Checkout</button>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <div class="footer-wrapper-top">
+        <div class="footer-left">
+          <ul>
+            <li>
+              <h3>SERVICES</h3>
+            </li>
+            <li>
+              <a href="">Strategy Design</a>
+            </li>
+            <li>
+              <a href="">Product Design</a>
+            </li>
+            <li>
+              <a href="">Content strategy</a>
+            </li>
+            <li>
+              <a href="">Brand Strategy</a>
+            </li>
+            <li>
+              <a href="">Development</a>
+            </li>
+          </ul>
+          <ul>
+            <li>
+              <h3>COMPANY</h3>
+            </li>
+            <li>
+              <a href="">About</a>
+            </li>
+            <li>
+              <a href="">Blog</a>
+            </li>
+            <li>
+              <a href="">Contact</a>
+            </li>
+            <li>
+              <a href="">Jobs</a>
+            </li>
+          </ul>
+        </div>
+        <div class="footer-right">
+          <h3 class="title">GET IN TOUCH</h3>
+          <p class="desc">Feel free to get in touch with us via email</p>
+          <a href="mailto:arhome@gmail.com" class="email">arhome@gmail.com</a>
+          <div class="dots">
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot active"></div>
+            <div class="dot"></div>
+          </div>
+        </div>
+      </div>
+      <div class="footer-wrapper-bottom">
+        <span>AR Home</span>
+        <span>© 2020@webovio. All Rights Reserved.</span>
+      </div>
+    </footer>
+  </div>
+  <script src="../js/data.js"></script>
+  <script>
+    const urlParams = new URLSearchParams(window.location.search);
+    const id = urlParams.get('id');
+
+    const product = products.find(product => product.id === id);
+
+    if (product) {
+      const productName = document.querySelector('.cart-item-title');
+      productName.textContent = product.type;
+      const productImage = document.querySelector('.cart-item-image img');
+      productImage.src = product.image;
+    }
+  </script>
+</body>
+
+</html>

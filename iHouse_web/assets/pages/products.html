@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Products </title>
+  <link rel="stylesheet" href="../css/public.css">
+  <link rel="stylesheet" href="../css/products.css">
+</head>
+
+<body>
+
+  <div class="page-wrapper">
+    <header>
+      <div class="container">
+        <div class="header-content">
+          <!-- Left Navigation -->
+          <nav class="nav-left">
+            <a href="../../index.html" class="nav-item">AR Home</a>
+            <a href="space-builder.html" class="nav-item">
+              Space Builder
+              <img src="../images/icons/arrow-down.png" alt="dropdown">
+            </a>
+            <a href="products.html" class="nav-item active">
+              Products
+              <img src="../images/icons/arrow-down.png" alt="dropdown">
+            </a>
+            <a href="download.html" class="nav-item">
+              Download
+          
+          </a>
+          </nav>
+
+          <!-- Search Bar -->
+          <div class="search-container">
+            <img src="../images/icons/search.png" alt="search" class="search-icon">
+            <input type="text" class="search-input" placeholder="Search">
+          </div>
+
+          <!-- Right Navigation -->
+          <div class="nav-right">
+            <a href="#">
+              <img src="../images/icons/l-love.png" alt="wishlist">
+            </a>
+            <a href="#">
+              <img src="../images/icons/cart.png" alt="cart">
+            </a>
+            <a href="#">
+              <img src="../images/icons/avatar.jpg" alt="profile" class="avatar">
+            </a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main style="flex: 1;">
+      <section class="section-1">
+        <img src="../images/img/1.png" alt="Products Banner" class="banner-bg">
+        <h1 class="banner-title">Products</h1>
+      </section>
+      <section class="section-2">
+
+
+        <!-- <a href="cart.html" class="product-item">
+          <img src="../images/img/3.png" alt="Product 3">
+        </a>
+        <a href="cart.html" class="product-item">
+          <img src="../images/img/4.png" alt="Product 4">
+        </a>
+        <a href="cart.html" class="product-item">
+          <img src="../images/img/5.png" alt="Product 5">
+        </a>
+        <a href="cart.html" class="product-item">
+          <img src="../images/img/6.png" alt="Product 6">
+        </a>
+        <a href="cart.html" class="product-item">
+          <img src="../images/img/12.png" alt="Product 12">
+        </a>
+        <a href="cart.html" class="product-item">
+          <img src="../images/img/13.png" alt="Product 13">
+        </a> -->
+      </section>
+
+
+      <section class="section-3">
+        <div class="section-3-main">
+          <div class="section-3-title">Let’s make your space
+            amazing together.</div>
+          <a href="" class="cta-button-3">LET'S GET STARTED</a>
+        </div>
+      </section>
+    </main>
+
+
+
+
+    <footer>
+      <div class="footer-wrapper-top">
+        <div class="footer-left">
+          <ul>
+            <li>
+              <h3>SERVICES</h3>
+            </li>
+            <li>
+              <a href="">Strategy Design</a>
+            </li>
+            <li>
+              <a href="">Product Design</a>
+            </li>
+            <li>
+              <a href="">Content strategy</a>
+            </li>
+            <li>
+              <a href="">Brand Strategy</a>
+            </li>
+            <li>
+              <a href="">Development</a>
+            </li>
+          </ul>
+          <ul>
+            <li>
+              <h3>COMPANY</h3>
+            </li>
+            <li>
+              <a href="">About</a>
+            </li>
+            <li>
+              <a href="">Blog</a>
+            </li>
+            <li>
+              <a href="">Contact</a>
+            </li>
+            <li>
+              <a href="">Jobs</a>
+            </li>
+          </ul>
+        </div>
+        <div class="footer-right">
+          <h3 class="title">GET IN TOUCH</h3>
+          <p class="desc">Feel free to get in touch with us via email</p>
+          <a href="mailto:arhome@gmail.com" class="email">arhome@gmail.com</a>
+          <div class="dots">
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot active"></div>
+            <div class="dot"></div>
+          </div>
+        </div>
+      </div>
+      <div class="footer-wrapper-bottom">
+        <span>AR Home</span>
+        <span>© 2020@webovio. All Rights Reserved.</span>
+      </div>
+    </footer>
+  </div>
+  <script src="../js/data.js"></script>
+  <script>
+    const section2 = document.querySelector('.section-2');
+    for (let i = 0; i < products.length; i++) {
+
+      if (products[i].id.includes('1')) continue;
+
+      const productItem = document.createElement('a');
+      productItem.href = `cart.html?id=${products[i].id}`;
+      productItem.classList.add('product-item');
+      productItem.innerHTML = `<img src="${products[i].image}" alt="${products[i].type}">`;
+      section2.appendChild(productItem);
+    }
+  </script>
+</body>
+
+</html>
